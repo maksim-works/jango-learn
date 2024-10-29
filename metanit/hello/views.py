@@ -31,5 +31,22 @@ def send_error(request):
 def send_text(request):
     return HttpResponse("<h1>Hello</h1>", content_type="text/plain", charset="utf-8")
 
-def user(request, name):
-    return HttpResponse()
+def user(request, name="None", age=0):
+    return HttpResponse(f"<h2>Имя: {name} Возраст: {age}</h2>")
+
+# ==============================
+
+def products(request, id):
+    return HttpResponse(f"Товар {id}")
+
+def comments(request, id):
+    return HttpResponse(f"Комментарии о товаре {id}")
+
+def quiestions(request, id):
+    return HttpResponse(f"Вопросы о товаре {id}")
+
+def new(request):
+    return HttpResponse("Новые товары")
+
+def top(request):
+    return HttpResponse("Наиболее популярные товары")
